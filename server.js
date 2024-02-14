@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
-const notes = require('public/notes.html')
 const PORT = 3001;
+
+const routes =  require('./routes')
 
 const app = express();
 
@@ -10,17 +11,20 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-// GET request for notes
-app.get('/api/notes', (req, res) => {
-  res.status(200).json(notes);
-});
+app.use('/api', routes)
 
-// POST request to add a note
-app.post('/api/notes', (req, res) => {
-  // Log that a POST request was received
-  console.info(`${req.method} request received to add a note`);
-});
+
+app.get('/notes', (req, res)=>{
+  res.sendFile(path.join(__dirname, './public/notes.html'))
+})
+
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, './public/index.html'))
+})
+
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)
 );
+
+//notes for tutoring session Router for overall guide
