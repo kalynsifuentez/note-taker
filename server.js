@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const PORT = 3001;
 
-const routes =  require('./routes')
+const routes = require('./routes')
 
 const app = express();
 
@@ -27,4 +27,3 @@ app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)
 );
 
-//notes for tutoring session Router for overall guide

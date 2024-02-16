@@ -27,8 +27,16 @@ router.post("/notes/", (req, res) => {
 
 });
 
+// Delete function
+router.delete('/api/notes/:id', (req, res) => {
+    let data = fs.readFileSync('db/db.json', "headers");
+const dataJSON = JSON.parse(data);
+const newNotes = dataJSON.filter((note)=> {
+    return note.id !== req.params.id;
+});
 
+fs.writeFileSync("/db/db.json", JSON.stringify(newNotes));
+res.json("Successfully deleted");
+});
 
 module.exports = router;
-
-//Need to connect router to server.js - tutoring session
