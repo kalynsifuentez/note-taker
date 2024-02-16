@@ -8,6 +8,7 @@ router.get("/notes", (req, res) => {
   res.status(200).json(db);
 });
 
+// Request/response for router to post
 router.post("/notes/", (req, res) => {
     // req.body, req.params
     const { text, title } = req.body;
@@ -19,7 +20,7 @@ router.post("/notes/", (req, res) => {
     }
 
     db.push(newObj)
-
+// JSON application to write file
     fs.writeFile('./db/db.json', JSON.stringify(db), (err, res)=> {
         if (err)throw err;
     })
@@ -27,7 +28,7 @@ router.post("/notes/", (req, res) => {
 
 });
 
-// Delete function
+// Delete function *NOT WORKING*
 router.delete('/api/notes/:id', (req, res) => {
     let data = fs.readFileSync('db/db.json', "headers");
 const dataJSON = JSON.parse(data);

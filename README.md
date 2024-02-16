@@ -6,12 +6,17 @@ Note Taker application used to `(write, save, and delete)` notes. This applicati
 ## Code Source
 [HTTPS GitHub Repositry: Note Taker](https://github.com/kalynsifuentez/note-taker.git)
 
+[Live Application: Note Taker](https://frozen-ridge-05844-7fe72e5adabf.herokuapp.com)
+
 
 ## Screenshot
-![Image showing screenshot of CLI for running and testing app](//svg-logo-maker/SVG-logo-maker-CLI-Screenshot.png)
+![The database schema includes a movies table and a reviews table, linked by the movie id.](./public/assets/Screenshot%20-%20Note%20Taker%20Landing%20Page.png)
+
+![The database schema includes a movies table and a reviews table, linked by the movie id.](./public/assets/Screenshot%20Note%20Taker.png)
 
 ## Acknowledgements
 
 * Central Tutor Support: Jose Lopez
 * Peer collaboration: Martin Harvey
+* Instructors Paul and Natia - help with Heroku deployment
 
